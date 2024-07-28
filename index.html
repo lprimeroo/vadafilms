@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vada Films - We Make Meme-tastic Movies!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+        }
+        header {
+            background-color: #ff69b4;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .meme-image {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 20px auto;
+        }
+        .rainbow-text {
+            background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: rainbow-animation 5s linear infinite;
+        }
+        @keyframes rainbow-animation {
+            to {
+                background-position: 4500vh;
+            }
+        }
+        .spinning {
+            animation: spin 5s linear infinite;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#work">Our Work</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <h1 class="rainbow-text">Welcome to Vada Films</h1>
+
+    <div class="content">
+        <h2 id="about">About Us</h2>
+        <p>We're not your average movie production house. We're the meme lords of cinema! Our films are so dank, even Pepe the Frog can't handle them.</p>
+        <img src="path/to/pepe-popcorn.gif" alt="Pepe eating popcorn" class="meme-image">
+
+        <h2 id="work">Our Work</h2>
+        <p>Check out our latest blockbuster: "Doge to the Moon: A Crypto Tale". It's much wow, very film!</p>
+        <img src="path/to/doge-rocket.jpg" alt="Doge on a rocket" class="meme-image spinning">
+
+        <h2 id="contact">Contact Us</h2>
+        <p>Slide into our DMs or send a carrier pigeon. We're always ready to turn your meme dreams into meme-ovie reality!</p>
+        <img src="path/to/surprised-pikachu.png" alt="Surprised Pikachu" class="meme-image">
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', function(event) {
+            const eyes = document.querySelectorAll('.eye');
+            eyes.forEach(function(eye) {
+                const rect = eye.getBoundingClientRect();
+                const eyeCenterX = rect.left + rect.width / 2;
+                const eyeCenterY = rect.top + rect.height / 2;
+                const radians = Math.atan2(event.clientX - eyeCenterX, event.clientY - eyeCenterY);
+                const angle = radians * (180 / Math.PI) * -1 + 90;
+                eye.style.transform = `rotate(${angle}deg)`;
+            });
+        });
+    </script>
+</body>
+</html>
