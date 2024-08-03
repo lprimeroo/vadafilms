@@ -158,6 +158,51 @@
             }
         }
 
+
+        .tagline {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+            .awards-list {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .awards-list li {
+        flex-basis: calc(33.333% - 20px);
+        margin: 10px;
+        padding: 15px;
+        background-color: var(--secondary-color);
+        border: 1px solid var(--primary-color);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .awards-list li:hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        .awards-list li {
+            flex-basis: calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .awards-list li {
+            flex-basis: 100%;
+        }
+    }
+        
 #movie-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -206,11 +251,7 @@
 
     <main>
         <h1>Vada Films</h1>
-
-        <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>Vada Films is a cutting-edge movie production studio specializing in technical innovation and storytelling. We operate at the intersection of art and technology, pushing the boundaries of cinematic experiences.</p>
-        </section>
+        <p class="tagline">Pushing the boundaries of cinematic experiences at the intersection of art and technology.</p>
 
         <section id="founders" class="section">
             <h2>People</h2>
@@ -230,6 +271,12 @@
         <!-- Movie tiles will be dynamically added here -->
     </div>
 </section>
+<section id="accolades" class="section">
+    <h2>Accolades</h2>
+    <ul class="awards-list">
+        <li>Coming Soon</li>
+    </ul>
+</style>
 
         <section id="contact" class="section">
             <h2>Initiate Contact Sequence</h2>
@@ -250,11 +297,8 @@
         
 
         const movies = [
-        { title: "Quantum Dreams", image: "https://via.placeholder.com/200x300.png?text=Quantum+Dreams" },
-        { title: "Neon Nights", image: "https://via.placeholder.com/200x300.png?text=Neon+Nights" },
-        { title: "Virtual Horizons", image: "https://via.placeholder.com/200x300.png?text=Virtual+Horizons" },
-        { title: "Binary Sunset", image: "https://via.placeholder.com/200x300.png?text=Binary+Sunset" },
-        { title: "Circuit City", image: "https://via.placeholder.com/200x300.png?text=Circuit+City" }
+        { title: "Yama", image: "https://via.placeholder.com/200x300.png?text=Quantum+Dreams" },
+
     ];
 
     // Dynamically add movie tiles
